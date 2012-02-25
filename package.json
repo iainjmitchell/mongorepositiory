@@ -1,0 +1,17 @@
+{
+	"name": "mongorepository",
+	"description": "Generic implementation of the repository pattern for nodejs/mongodb",
+	"keywords": ["mongodb"],
+	"author": "IainJMitchell",
+  	"version": "1.0.0",
+  	"licenses": [{
+    	"type": "MIT"
+  	}],
+  	"directories": {
+    	"lib": "./lib"
+  	},
+  	"main":  "./lib/repository.js",
+  	"dependencies": {
+  		"mongojs":">=0.3.1"
+  	}
+}
