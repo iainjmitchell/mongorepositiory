@@ -1,3 +1,7 @@
+task :compile do
+	sh 'coffee --compile --output lib src'
+end
+
 task :ruby_dependencies do
 	sh 'bundle install --path gems'
 end
