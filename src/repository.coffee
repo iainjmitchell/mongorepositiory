@@ -1,8 +1,8 @@
 class Repository
 	constructor: (database, @objectName) ->
 		@db = require("mongojs").connect(database, [@objectName])
-	add: (value) ->
-		@db[@objectName].save(value)
+	add: (value, callback) ->
+		@db[@objectName].save(value,callback)
 	find: (query, callback) ->
 		@db[@objectName].find(query, (err, docs) -> callback(docs))
 	update: (query, value) ->
