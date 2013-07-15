@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    git_repository (0.0.11)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  git_repository
