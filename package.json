@@ -3,7 +3,7 @@
 	"description": "Generic implementation of the repository pattern for nodejs/mongodb",
 	"keywords": ["mongodb"],
 	"author": "IainJMitchell",
-  	"version": "1.0.0",
+  	"version": "1.0.1",
   	"licenses": [{
     	"type": "MIT"
   	}],
