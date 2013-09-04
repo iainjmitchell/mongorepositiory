@@ -1,6 +1,6 @@
 var assert = require('assert'),
 	Repository = require('../lib/repository').Repository,
-	mongoConnectionString = process.env.DATA_STORE_CONNECTION_STRING;
+	mongoConnectionString = 'mongodb://username:password@host'; 
 
 test('Test add uses callback after cat written to database',function(done){
 	var catRepository = new Repository(mongoConnectionString, 'cat'),

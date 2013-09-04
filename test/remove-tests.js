@@ -1,6 +1,6 @@
 var assert = require('assert'),
 	Repository = require('../lib/repository').Repository,
-	mongoConnectionString = process.env.DATA_STORE_CONNECTION_STRING;
+	mongoConnectionString = 'mongodb://username:password@host'; 
 
 test('Test can remove a cat from the db',function(done){
 	var catRepository = new Repository(mongoConnectionString, 'cat'),
