@@ -33,5 +33,7 @@ cat.age = 4;
 catRepository.update(query, cat);
 
 //delete cat
-catRepository.remove(query);
+catRepository.remove(query,function(){
+	console.log("Removed ",cat);
+});
 ```
