@@ -1,6 +1,4 @@
-task :compile do
-	sh 'coffee --compile --output lib src'
-end
+task :default => [:ruby_dependencies, :node_dependencies, :test, :git]
 
 task :ruby_dependencies do
 	sh 'bundle install --path gems'
@@ -23,5 +21,5 @@ task :git => :ruby_dependencies do
 end
 
 task :test do
-	sh 'mocha ./test  --ui qunit --recursive --reporter nyan'	
+	sh 'mocha ./test  --recursive --reporter nyan'	
 end
