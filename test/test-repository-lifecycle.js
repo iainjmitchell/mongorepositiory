@@ -57,8 +57,33 @@ describe('When we want to keep track of cats', function(){
 		});
 
 		describe('When I add a whole host of kitties', function(){
-			describe('And I try to find all the cats with age of 10', function(){
+			before(function(){
+				mongoRepository.add({name : 'paul', age: 1});
+				mongoRepository.add({name : 'ringo', age: 10});
+				mongoRepository.add({name : 'george', age: 1});
+				mongoRepository.add({name : 'john', age: 10});
+				mongoRepository.add({name : 'blah', age: 10});
+			});
 
+			describe('And I try to find all the cats with age of 10', function(){
+				it('Then I only get the cats with an age of 10', function(done){
+					mongoRepository.find({age : 10}, function(cats){
+						cats.length.should.equal(3);
+						done();
+					});
+				});
+
+				describe('And I remove all cats', function(){
+					describe('And I try to find all cats', function(){
+						it('Then no cats are returned :(', function(done){
+							mongoRepository.remove({});
+							mongoRepository.find({}, function(cats){
+								cats.length.should.equal(0);
+								done();
+							});
+						});
+					});
+				});
 			});
 		});
 	});
