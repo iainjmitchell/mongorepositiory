@@ -87,4 +87,29 @@ describe('When we want to keep track of cats', function(){
 			});
 		});
 	});
+
+	describe('When I have a cat with an _id', function(){
+		var _id = '101',
+			bagpuss = {
+				_id : _id,
+			};
+		
+		before(function(done){
+			mongoRepository.add(bagpuss, done);
+		});
+
+		describe('When I get the cat by _id', function(){
+			it('Then my cat is returned', function(done){
+				mongoRepository.get(_id, function(cat){
+					console.log(cat);
+					cat.should.eql(bagpuss);
+					done();
+				});
+			});
+		});
+
+		after(function(){
+			mongoRepository.remove({});
+		});
+	});
 });
