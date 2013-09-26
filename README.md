@@ -1,4 +1,4 @@
-# mongorespository
+# mongorepository
 A [node.js](http://nodejs.org/) module that contains a generic implementation of the [Repository Pattern](http://martinfowler.com/eaaCatalog/repository.html) for [mongoDB](http://www.mongodb.org/).
 
 ### Installation
@@ -17,10 +17,17 @@ var Repository = require('mongoRepository').Repository;
 var catRepository = new Repository('username:password@localhost/dbname', 'cat');
 
 var cat = {
+  _id : 101,
   name: 'trevor'
 }
+
 //add cat
 catRepository.add(cat);
+
+//get cat by id
+catRepository.get(101, function(returnedCat){
+	console.log(returnedCat);
+});
 
 //find cat
 query = {name: 'trevor'}
